@@ -15,5 +15,9 @@ export class SideBarLeftComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  public exit(): any {
+    // setTimeout(() => {
+    //   location.reload();
+    // }, 100);
+  }
 }

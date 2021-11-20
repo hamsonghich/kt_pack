@@ -15,7 +15,8 @@
               <p>GIẢM</p>
             </div>
             <img class="img-fake" src="{{ productItem.img[0].link}}" alt="">
-            <img id="idImg{{i}}" *ngFor="let item of productItem.img; let i = index" class="img-item"
+            <img id="idImg{{i}}" *ngFor="let item of productItem.img; let i = index"
+                   class="img-item"
                  src="{{item.link}}"
                  alt="{{item.name}}">
           </div>
@@ -114,6 +115,7 @@
       <div class="col-right__level3">
         <div>
           <app-more-product></app-more-product>
+
         </div>
       </div>
 

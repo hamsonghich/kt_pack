@@ -17,7 +17,7 @@
         <ul>
           <li *ngFor="let item1 of item.child">
             <i class="far fa-box-open"></i>
-            <a href="" routerLink="{{item1.link}}"
+            <a href="" routerLink="{{item1.link}}" (click)="exit()"
                routerLinkActive="$router_link-active$">{{item1.name}} </a>
           </li>
         </ul>

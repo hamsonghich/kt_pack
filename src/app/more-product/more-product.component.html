@@ -4,7 +4,7 @@
   </div>
   <div class="list_total_product">
     <ul class="list_total_product__ul">
-      <li *ngFor="let item of dataServicesService.productDetailsList.thungnhuaDanpla | paginate: {id: 'thungnhuaDanpla', itemsPerPage: 8, currentPage: page } let i = index ">
+      <li *ngFor="let item of dataServicesService.productDetailsList.thungnhuaDanpla | paginate: {id: 'thungnhuaDanpla', itemsPerPage: 8, currentPage: pagethungnhuaDanpla } let i = index ">
         <div class="classFakeTop"></div>
         <div class="classFakeBottom"></div>
         <div class="form-cell">
@@ -18,8 +18,8 @@
           </div>
           <div class="contentTotal">
             <div class="contentProduct">
-              <a routerLink='/productDetails/{{item.id.link}}'
-                (click)="exit()" routerLinkActive="$router_link-active$">{{item.id.name}}</a>
+              <a routerLink='/productDetails/{{item.id.link}}'  (click)="exit()"
+                routerLinkActive="active">{{item.id.name}}</a>
             </div>
             <div class="priceProduct">
               <div>
@@ -72,10 +72,10 @@
     </ul>
     <pagination-controls id="thungnhuaDanpla"
                           previousLabel="Trang Trước"
-                          nextLabel="Trang Sau" (pageChange)="page = $event"></pagination-controls>
+                          nextLabel="Trang Sau" (pageChange)="pagethungnhuaDanpla = $event"></pagination-controls>
 
     <ul class="list_total_product__ul">
-      <li *ngFor="let item of dataServicesService.productDetailsList.vachnhuaDanpla | paginate: {id: 'vachnhuaDanpla', itemsPerPage: 8, currentPage: page } let i = index ">
+      <li *ngFor="let item of dataServicesService.productDetailsList.vachnhuaDanpla | paginate: {id: 'vachnhuaDanpla', itemsPerPage: 8, currentPage: pagevachnhuaDanpla } let i = index ">
         <div class="classFakeTop"></div>
         <div class="classFakeBottom"></div>
         <div class="form-cell">
@@ -89,8 +89,8 @@
           </div>
           <div class="contentTotal">
             <div class="contentProduct">
-              <a routerLink='/productDetails/{{item.id.link}}'
-                 (click)="exit()" routerLinkActive="$router_link-active$">{{item.id.name}}</a>
+              <a routerLink='/productDetails/{{item.id.link}}' (click)="exit()"
+                 routerLinkActive="$router_link-active$">{{item.id.name}}</a>
             </div>
             <div class="priceProduct">
               <div>
@@ -143,10 +143,10 @@
     </ul>
     <pagination-controls id="vachnhuaDanpla"
                          previousLabel="Trang Trước"
-                         nextLabel="Trang Sau" (pageChange)="page = $event"></pagination-controls>
+                         nextLabel="Trang Sau" (pageChange)="pagevachnhuaDanpla = $event"></pagination-controls>
 
     <ul class="list_total_product__ul">
-      <li *ngFor="let item of dataServicesService.productDetailsList.xopBongKhi | paginate: {id: 'xopBongKhi', itemsPerPage: 8, currentPage: page } let i = index ">
+      <li *ngFor="let item of dataServicesService.productDetailsList.xopBongKhi | paginate: {id: 'xopBongKhi', itemsPerPage: 8, currentPage: pagexopBongKhi } let i = index ">
         <div class="classFakeTop"></div>
         <div class="classFakeBottom"></div>
         <div class="form-cell">
@@ -160,8 +160,8 @@
           </div>
           <div class="contentTotal">
             <div class="contentProduct">
-              <a routerLink='/productDetails/{{item.id.link}}'
-                 (click)="exit()" routerLinkActive="$router_link-active$">{{item.id.name}}</a>
+              <a routerLink='/productDetails/{{item.id.link}}' (click)="exit()"
+                  routerLinkActive="$router_link-active$">{{item.id.name}}</a>
             </div>
             <div class="priceProduct">
               <div>
@@ -214,10 +214,10 @@
     </ul>
     <pagination-controls id="xopBongKhi"
                          previousLabel="Trang Trước"
-                         nextLabel="Trang Sau" (pageChange)="page = $event"></pagination-controls>
+                         nextLabel="Trang Sau" (pageChange)="pagexopBongKhi = $event"></pagination-controls>
 
     <ul class="list_total_product__ul">
-      <li *ngFor="let item of dataServicesService.productDetailsList.xopEvaPEFoam | paginate: {id: 'xopEvaPEFoam', itemsPerPage: 8, currentPage: page } let i = index ">
+      <li *ngFor="let item of dataServicesService.productDetailsList.xopEvaPEFoam | paginate: {id: 'xopEvaPEFoam', itemsPerPage: 8, currentPage: pagexopEvaPEFoam } let i = index ">
         <div class="classFakeTop"></div>
         <div class="classFakeBottom"></div>
         <div class="form-cell">
@@ -231,8 +231,8 @@
           </div>
           <div class="contentTotal">
             <div class="contentProduct">
-              <a routerLink='/productDetails/{{item.id.link}}'
-                 (click)="exit()" routerLinkActive="$router_link-active$">{{item.id.name}}</a>
+              <a [routerLink]="['/productDetails/',item.id.link]"  (click)="exit()"
+                  routerLinkActive="$router_link-active$">{{item.id.name}}</a>
             </div>
             <div class="priceProduct">
               <div>
@@ -285,8 +285,9 @@
     </ul>
     <pagination-controls id="xopEvaPEFoam"
                          previousLabel="Trang Trước"
-                         nextLabel="Trang Sau" (pageChange)="page = $event"></pagination-controls>
+                         nextLabel="Trang Sau" (pageChange)="pagexopEvaPEFoam = $event"></pagination-controls>
 
 
   </div>
 </div>
+<router-outlet></router-outlet>

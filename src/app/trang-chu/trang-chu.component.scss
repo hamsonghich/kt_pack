@@ -134,9 +134,11 @@
       }
       .contact{
         font-weight: bold;
-        margin-left: 100px;
+        width: 48%;
+        font-size: 90%;
         color: var(--primary-color);
         text-transform: uppercase;
+        margin-left: 100px;
       }
 
     }
@@ -157,6 +159,10 @@
   }
 
   .row3{
+    marquee{
+      margin-right: 18% !important;
+      width: calc(100% - 22% - 18%) !important;
+    }
     margin-top: 18px;
     margin-right: calc(var(--bs-gutter-x) / 2);
     margin-left: calc(var(--bs-gutter-x) / 2);

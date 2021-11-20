@@ -1,9 +1,11 @@
 import {AfterContentInit, AfterViewInit, Component, Inject, Injector, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, NavigationStart, Router, NavigationEnd } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import {DataServicesService} from '../services/data-services.service';
 import { DOCUMENT } from '@angular/common';
 import './custom.js';
+import * as $ from 'jquery';
+import {Observable} from 'rxjs';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -37,19 +39,50 @@ export class ProductDetailsComponent implements OnInit{
   };
   // tslint:disable-next-line:max-line-length
   constructor(public activatedRoute: ActivatedRoute, public dataServicesService: DataServicesService,
-              @Inject(DOCUMENT) public document: Document) {
+              @Inject(DOCUMENT) public document: Document,  public router: Router) {
   }
   // itemPro: any;
-  id: any;
   public productItem: any;
-
-
+  private id: Observable<any> | any;
 
   ngOnInit(): void {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.id = params.get('id');
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < this.dataServicesService.productDetailsList.thungnhuaDanpla.length; i++) {
+        if (this.dataServicesService.productDetailsList.thungnhuaDanpla[i].id.link === this.id) {
+          this.productItem = this.dataServicesService.productDetailsList.thungnhuaDanpla[i];
+        }
+      }
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < this.dataServicesService.productDetailsList.vachnhuaDanpla.length; i++) {
+        if (this.dataServicesService.productDetailsList.vachnhuaDanpla[i].id.link === this.id) {
+          this.productItem = this.dataServicesService.productDetailsList.vachnhuaDanpla[i];
+        }
+      }
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < this.dataServicesService.productDetailsList.xopEvaPEFoam.length; i++) {
+        if (this.dataServicesService.productDetailsList.xopEvaPEFoam[i].id.link === this.id) {
+          this.productItem = this.dataServicesService.productDetailsList.xopEvaPEFoam[i];
+        }
+      }
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < this.dataServicesService.productDetailsList.xopBongKhi.length; i++) {
+        if (this.dataServicesService.productDetailsList.xopBongKhi[i].id.link === this.id) {
+          this.productItem = this.dataServicesService.productDetailsList.xopBongKhi[i];
+        }
+      }
+      console.log(this.productItem);
+      console.log(this.dataServicesService.productDetailsList.thungnhuaDanpla[0].id);
+    });
     // tslint:disable-next-line:only-arrow-functions typedef
     $(document).ready(function(){
-     $(window).scrollTop(0);
-
      $('.img-item').css({display : 'none'});
       // tslint:disable-next-line:typedef
      $( '.item_img_small' ).mouseover(function(){
@@ -80,40 +113,5 @@ export class ProductDetailsComponent implements OnInit{
         }
       });
     });
-    console.log(this.getProductDetailsId());
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.dataServicesService.productDetailsList.thungnhuaDanpla.length; i++) {
-      if (this.dataServicesService.productDetailsList.thungnhuaDanpla[i].id.link === this.getProductDetailsId()) {
-        this.productItem = this.dataServicesService.productDetailsList.thungnhuaDanpla[i];
-      }
-    }
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.dataServicesService.productDetailsList.vachnhuaDanpla.length; i++) {
-      if (this.dataServicesService.productDetailsList.vachnhuaDanpla[i].id.link === this.getProductDetailsId()) {
-        this.productItem = this.dataServicesService.productDetailsList.vachnhuaDanpla[i];
-      }
-    }
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.dataServicesService.productDetailsList.xopEvaPEFoam.length; i++) {
-      if (this.dataServicesService.productDetailsList.xopEvaPEFoam[i].id.link === this.getProductDetailsId()) {
-        this.productItem = this.dataServicesService.productDetailsList.xopEvaPEFoam[i];
-      }
-    }
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.dataServicesService.productDetailsList.xopBongKhi.length; i++) {
-      if (this.dataServicesService.productDetailsList.xopBongKhi[i].id.link === this.getProductDetailsId()) {
-        this.productItem = this.dataServicesService.productDetailsList.xopBongKhi[i];
-      }
-    }
-    console.log(this.productItem);
-    console.log(this.dataServicesService.productDetailsList.thungnhuaDanpla[0].id);
   }
-
-  public getProductDetailsId(): any {
-    this.activatedRoute.paramMap.subscribe(params => {
-      this.id = params.get('id');
-    });
-    return this.id;
-  }
-
 }

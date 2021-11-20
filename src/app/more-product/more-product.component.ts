@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {DataServicesService} from '../services/data-services.service';
-import {NavigationEnd, Router} from '@angular/router';
+import {NavigationEnd, Router, NavigationStart} from '@angular/router';
 import {any} from 'codelyzer/util/function';
 
 @Component({
@@ -11,12 +11,15 @@ import {any} from 'codelyzer/util/function';
 export class MoreProductComponent implements OnInit {
 
   constructor(public dataServicesService: DataServicesService, public router: Router) { }
-  public page = 1;
+  public pagevachnhuaDanpla = 1;
+  public pagethungnhuaDanpla = 1;
+  public pagexopBongKhi = 1;
+  public pagexopEvaPEFoam = 1;
   ngOnInit(): void {
   }
   public exit(): any {
-    setTimeout(() => {
-      location.reload();
-    }, 0);
+    // setTimeout(() => {
+    //   location.reload();
+    // }, 100);
   }
 }

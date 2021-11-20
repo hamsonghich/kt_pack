@@ -23,8 +23,8 @@ const routes: Routes = [
   {path: 'lienhe', component: LienheComponent},
   {path: 'gioithieu', component: GioithieuComponent},
   {path: 'product', component: ProductComponent},
-  {path: 'productDetails/:id', component: ProductDetailsComponent,  pathMatch: 'full', },
-  {path: 'productType/:id', component: ProductTypeComponent, pathMatch: 'full'},
+  {path: 'productDetails/:id', component: ProductDetailsComponent},
+  {path: 'productType/:id', component: ProductTypeComponent},
   {path: '', redirectTo: '/trangchu', pathMatch: 'full' },
   {path: '**', component: NotFoundComponent},
 
@@ -32,8 +32,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,  {enableTracing: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
-export const routing = RouterModule.forRoot(routes, { scrollOffset: [0, 0], scrollPositionRestoration: 'top' });

@@ -11,6 +11,7 @@ export class ProductDetailsMoreInfoComponent implements OnInit {
 
   constructor(public dataServicesService: DataServicesService, @Inject(DOCUMENT) document: Document) { }
   public filterList: any;
+  public lengthTypeProduct = this.dataServicesService.listHeader.length;
   ngOnInit(): void {
     console.log('href');
     console.log(document.location.href);

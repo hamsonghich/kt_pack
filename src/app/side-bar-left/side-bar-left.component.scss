@@ -30,10 +30,15 @@
     }
 
   }
-
-  mat-expansion-panel-header {
-    background-color: var(--bg-gray);
+::ng-deep mat-accordion:nth-child(1), ::ng-deep mat-accordion:nth-child(2),
+::ng-deep mat-accordion:nth-last-child(1),::ng-deep mat-accordion:nth-last-child(2),{
+  ::ng-deep mat-expansion-panel-header{
+    ::ng-deep .mat-expansion-indicator{
+      display: none;
+    }
   }
+}
+
 
   ::ng-deep mat-expansion-panel-header:hover {
     background-color: var(--primary-color) !important;

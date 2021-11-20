@@ -47,7 +47,7 @@
       <div class="header-title__child1">
         <p>Tin tức</p><i class="fas fa-caret-right"></i>
       </div>
-      <marquee width="500px" fontweight="bold" behavior="scroll">
+      <marquee  fontweight="bold" behavior="scroll">
         <p
           style="font-weight: bold;text-transform: uppercase; color: rgba(0,0,0,0.8);margin-bottom: 0;"> {{dataServicesService.introduceCompany.nameCompany}}</p>
       </marquee>
@@ -70,7 +70,7 @@
           <i class="fas fa-caret-right"></i>
         </div>
 
-        <marquee  width="60%" behavior="scroll">
+        <marquee  behavior="scroll">
           <div class="list-item">
             <a *ngFor="let item of dataServicesService.listHeader[2].child" style="font-style:italic;" href=""
                routerLink="{{item.link}}">
@@ -162,7 +162,7 @@
           chương trình khuyến mãi
         </p>
         <div class="img-banner-selling">
-          <img src="" alt="" title="khuyen mai">
+          <img src="{{dataServicesService.productSale[0].link}}" alt="" title="{{dataServicesService.productSale[0].name}}">
         </div>
 
       </div>
@@ -177,7 +177,7 @@
           <i class="fas fa-caret-right"></i>
         </div>
 
-        <marquee width="60%" behavior="scroll">
+        <marquee  behavior="scroll">
           <div class="list-item">
             <a *ngFor="let item of dataServicesService.listHeader[3].child" style="font-style:italic;" href=""
                routerLink="{{item.link}}">
@@ -273,7 +273,7 @@
           chương trình khuyến mãi
         </p>
         <div class="img-banner-selling">
-          <img src="" alt="" title="khuyen mai">
+          <img src="{{dataServicesService.productSale[1].link}}" alt="" title="{{dataServicesService.productSale[1].name}}">
         </div>
 
       </div>
@@ -289,7 +289,7 @@
         </div>
 
 
-        <marquee width="60%" behavior="scroll">
+        <marquee  behavior="scroll">
           <div class="list-item">
             <a *ngFor="let item of dataServicesService.listHeader[4].child" style="font-style:italic;" href=""
                routerLink="{{item.link}}">
@@ -385,7 +385,7 @@
           chương trình khuyến mãi
         </p>
         <div class="img-banner-selling">
-          <img src="" alt="" title="khuyen mai">
+          <img src="{{dataServicesService.productSale[2].link}}" alt="" title="{{dataServicesService.productSale[2].name}}">
         </div>
 
       </div>
@@ -400,7 +400,7 @@
           <i class="fas fa-caret-right"></i>
         </div>
 
-        <marquee width="60%" behavior="scroll">
+        <marquee  behavior="scroll">
           <div class="list-item">
             <a *ngFor="let item of dataServicesService.listHeader[5].child" style="font-style:italic;" href=""
                routerLink="{{item.link}}">
@@ -496,7 +496,7 @@
           chương trình khuyến mãi
         </p>
         <div class="img-banner-selling">
-          <img src="" alt="" title="khuyen mai">
+          <img src="{{dataServicesService.productSale[3].link}}" alt="" title="{{dataServicesService.productSale[3].name}}">
         </div>
 
       </div>

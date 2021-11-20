@@ -1414,7 +1414,12 @@ export class DataServicesService {
     {link: './assets/Storage/Upload/banner/Banner_trangchu_1.jpeg', name: 'img1-trang-chu'},
     {link: './assets/Storage/Upload/banner/Banner_trangchu_2.jpeg', name: 'img2-trang-chu'},
   ];
-
+  public productSale = [
+    {link: './assets/Storage/Upload/banner/banner_sale/product_sale_1.png', name: 'san pham khuyen mai'},
+    {link: './assets/Storage/Upload/banner/banner_sale/product_sale_2.png', name: 'san pham khuyen mai'},
+    {link: './assets/Storage/Upload/banner/banner_sale/product_sale_1.png', name: 'san pham khuyen mai'},
+    {link: './assets/Storage/Upload/banner/banner_sale/product_sale_2.png', name: 'san pham khuyen mai'},
+  ];
   constructor() {
     for (const item of this.productDetailsList.thungnhuaDanpla) {
       this.productDetailsListTotal.push(item);
