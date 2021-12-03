@@ -4,7 +4,23 @@
     height: 50px;
   }
   .row2{
-    .col-left{ width: 25%;}
+    .col-left{
+      width: 25%;
+      .banner-sales{
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+        img{
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          border-radius: 10px;
+          margin-left: 5%;
+          margin-top: 5%;
+          width: 90%;
+          height: 90%;
+        }
+      }
+
+    }
     .col-right{
       width: 75%;
       .sort-bar {
@@ -109,6 +125,62 @@
           }
         }
       }
+      .notMatch{
+        border-radius: 10px;position: relative;
+        margin-top: 20px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 100%;
+        height: 600px;
+        background-image: url('/assets/Storage/Upload/banner/error-404-404.png');
+        background-size: cover;
+        background-position: center;
+        .contentText{
+          width: 80%;display: flex;flex-direction: column;
+          justify-content: center;
+          margin-left: 10%;
+          position: absolute;
+          top: 55%;
+          p{
+            color: #a19ebd;text-align: center;
+            font-family: hevatica-light, sans-serif;
+          }
+          p:nth-child(1){
+            font-size: 170%;
+            line-height: 35px; font-weight: 100;
+          }
+          p:nth-child(2){
+            font-size: 17px;
+            font-weight: 100;
+          }
+          button{
+            animation: animateBg 2s infinite;
+            position: relative;
+            width: 154px;
+            height: 44px;border:none;
+            border-radius: 44px;
+            background-size: 100% 100%;
+            background: linear-gradient(to bottom,#f8fcff 0%, #3588d8 50%);
+          }
+          button::after{
+            z-index: 1;
+            position: absolute;top: 2px;left: 2px;
+            content: "";
+            width: 150px;
+            height: 40px;
+            background-color: #0d1e4c;
+            border-radius: 40px;
+          }
+          button::before{
+            position: absolute;
+            top:50%;left: 50%;
+            transform: translate(-50%, -50%);
+            content: "Trở lại";z-index: 5;
+            font-family: hevatica-regular, sans-serif;
+            font-size: 120%;color: white;
+          }
+
+        }
+
+      }
       .list_total_product {
         width: 100%;padding-top:20px;
         background-color: #f5f5f5;
@@ -121,7 +193,7 @@
           li {
             transition: all 0.35s ease-in;
             position: relative;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.8);
             width: 22.5%;
             height: 320px;
             margin: 10px;
@@ -356,4 +428,13 @@
   .row3{
     margin-bottom: 30px;
   }
+}
+@keyframes animationBtn {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
+}
+@keyframes animateBg {
+  0% {background-position: 0% 0%;}
+  100% {background-position: 0% 100%;}
 }

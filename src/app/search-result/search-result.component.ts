@@ -20,6 +20,13 @@ export class SearchResultComponent implements OnInit {
   constructor(public dataServicesService: DataServicesService) { }
 
   ngOnInit(): void {
+    // tslint:disable-next-line:only-arrow-functions typedef
+    $(document).ready(function(){
+      // tslint:disable-next-line:only-arrow-functions typedef
+      $('.btnPrev').click(function() {
+        window.scrollTo(0, 0);
+      });
+      });
     this.dataServicesService.currentNameSubject$.getValue().forEach((item: any) => {
       console.log('da convert');
       const data1 = JSON.parse(JSON.stringify(item));

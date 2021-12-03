@@ -6,6 +6,11 @@
   <div class="row row2">
     <div class="col-left">
       <app-side-bar-left></app-side-bar-left>
+      <div class="banner-sales">
+        <a href="">
+          <img src="{{dataServicesService.productSale[0].link}}" alt="{{dataServicesService.productSale[0].name}}">
+        </a>
+      </div>
     </div>
     <div class="col-right">
       <div class="sort-bar">
@@ -38,6 +43,16 @@
             </mat-form-field>
           </div>
         </div>
+      </div>
+      <div class="notMatch" *ngIf="dataSearchMatch.length===0">
+            <div class="contentText">
+              <p>Oops! Rất tiếc chúng tôi không tìm thấy kết quả nào trùng khớp.</p>
+              <p>Bạn hãy cho gõ từ khóa chính xác hơn. Xin cảm ơn!</p>
+              <div class="centerFlex" style="margin-top: 20px;">
+                <button class="btnPrev" routerLink="/trangchu">Quay trở lại</button>
+              </div>
+            </div>
+
       </div>
       <div class="list_total_product">
         <ul>

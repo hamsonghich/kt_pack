@@ -29,8 +29,8 @@ const routes: Routes = [
   {path: 'productType/:id', component: ProductTypeComponent},
   {path: 'header', component: HeaderComponent},
   {path: 'searchResult', component: SearchResultComponent},
-  // {path: '', redirectTo: '/trangchu', pathMatch: 'full' },
-  {path: '**', component: NotFoundComponent},
+  {path: '**', redirectTo: '/trangchu', pathMatch: 'full' },
+  // {path: '**', component: NotFoundComponent},
 
 ];
 
