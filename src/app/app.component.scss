@@ -1,0 +1,25 @@
+.fixPos{
+  position: absolute;
+  width: 100px;z-index: 100;
+  height: 100px;
+  bottom: 20px;
+  left: 100px;
+  .scrollTop{
+    position: fixed;
+    bottom: 46px;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    left: 120px;
+    background-color: #ffd057;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    i{
+      font-size: 150%;
+      color: var(--primary-color);
+    }
+  }
+}
+

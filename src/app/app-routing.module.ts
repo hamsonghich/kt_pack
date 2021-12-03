@@ -12,6 +12,8 @@ import {XopEvaFoamComponent} from './xop-eva-foam/xop-eva-foam.component';
 import {XopbongkhiComponent} from './xopbongkhi/xopbongkhi.component';
 import {TrangChuComponent} from './trang-chu/trang-chu.component';
 import {TintucComponent} from './tintuc/tintuc.component';
+import {SearchResultComponent} from './search-result/search-result.component';
+import {HeaderComponent} from './header/header.component';
 
 const routes: Routes = [
   {path: 'trangchu', component: TrangChuComponent},
@@ -25,7 +27,9 @@ const routes: Routes = [
   {path: 'product', component: ProductComponent},
   {path: 'productDetails/:id', component: ProductDetailsComponent},
   {path: 'productType/:id', component: ProductTypeComponent},
-  {path: '', redirectTo: '/trangchu', pathMatch: 'full' },
+  {path: 'header', component: HeaderComponent},
+  {path: 'searchResult', component: SearchResultComponent},
+  // {path: '', redirectTo: '/trangchu', pathMatch: 'full' },
   {path: '**', component: NotFoundComponent},
 
 ];

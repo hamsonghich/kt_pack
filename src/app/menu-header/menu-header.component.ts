@@ -25,9 +25,6 @@ export class MenuHeaderComponent implements OnInit {
     return 1;
   }
   public exit(): any{
-    setTimeout(() => {
-      location.reload();
-    }, 100);
   }
 
 }

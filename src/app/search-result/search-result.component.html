@@ -1,11 +1,11 @@
 
-
+<!--<div>{{this.dataServicesService.currentNameSubject$.getValue().length|json}}</div>-->
+<!--<div>dataS: {{this.dataSearchMatch.length}}</div>-->
 <div class="container-fluid">
-  <div class="row row1">
+  <div class="row row1"></div>
+  <div class="row row2">
     <div class="col-left">
       <app-side-bar-left></app-side-bar-left>
-
-      <app-banner-sales></app-banner-sales>
     </div>
     <div class="col-right">
       <div class="sort-bar">
@@ -14,7 +14,7 @@
           <div class="typeOption">
             <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
               <mat-button-toggle class="sort-by-option__option" (click)="sortPopular()">Phổ biến</mat-button-toggle>
-              <mat-button-toggle class="sort-by-option__option">Mới nhất</mat-button-toggle>
+              <mat-button-toggle class="sort-by-option__option" >Mới nhất</mat-button-toggle>
               <mat-button-toggle class="sort-by-option__option" (click)="sortBestSales()">Bán chạy</mat-button-toggle>
             </mat-button-toggle-group>
           </div>
@@ -41,7 +41,7 @@
       </div>
       <div class="list_total_product">
         <ul>
-          <li *ngFor="let item of dataServicesService.dataProductDetailsList[0] |
+          <li *ngFor="let item of this.dataSearchMatch |
           paginate: {itemsPerPage: this.chooseItemOfPage, currentPage: page} let i = index">
             <div class="classFakeTop"></div>
             <div class="classFakeBottom"></div>
@@ -53,8 +53,8 @@
                   <div class="img-like2"></div>
                 </div>
                 <div class="img-discount">
-                    <p class="valueDiscount">{{item.discount.number}}%</p>
-                    <p class="textDiscount">giảm</p>
+                  <p class="valueDiscount">{{item.discount.number}}%</p>
+                  <p class="textDiscount">giảm</p>
                 </div>
               </div>
               <div class="contentTotal">
@@ -110,11 +110,12 @@
         </ul>
         <pagination-controls previousLabel="Trang trước" nextLabel="Trang sau" class="text-center" (pageChange)="page = $event"></pagination-controls>
       </div>
-
-
     </div>
   </div>
-  <div class="row row2">
+  <div class="row row3"></div>
+  <div class="row row4">
     <app-footer-main></app-footer-main>
   </div>
 </div>
+
+

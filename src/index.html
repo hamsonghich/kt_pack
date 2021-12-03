@@ -5,7 +5,7 @@
   <title>kt_pack</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./assets/Storage/Upload/icon/icon_logo.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,16 +13,18 @@
   <link rel="stylesheet" href="./assets/Font/fontawesome-pro-5.15.3-web/css/all.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./assets/Lib/xzoom/xzoom.css">
-  <script src="./assets/Lib/xzoom/xzoom.js"></script>
-  <script type="text/javascript" src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+
 </head>
 <body class="mat-typography" style="max-width: 1440px;margin:auto">
+
+
+
 <!-- Messenger Plugin chat Code -->
 <div id="fb-root"></div>
 
 <!-- Your Plugin chat code -->
 <div id="fb-customer-chat" class="fb-customerchat"></div>
+<div class="indexBlack"></div>
 <script>
   var chatbox = document.getElementById('fb-customer-chat');
   chatbox.setAttribute("page_id", "111975614638829");
@@ -42,6 +44,9 @@
     js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+
+
+
 </script>
 
   <app-root></app-root>

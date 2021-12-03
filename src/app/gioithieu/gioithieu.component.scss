@@ -36,8 +36,9 @@
       }
       p{
         text-indent: 20px;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 120%;font-style: italic;
+        font-family: hevatica-regular, sans-serif;
+        font-size: 110%;font-style: italic;
+        line-height: 25px;
         color: var(--primary-color);
       }
 
@@ -95,16 +96,16 @@
         }
       }
       .address{
+        font-family: hevatica-regular, sans-serif;
           ul{
             li{
-              font-family: 'Open Sans', sans-serif;
               font-size: 110%;
               padding-bottom: 10px;
-              color: var(--primary1-color);
+              color:var(--primary-color);
             }
             li:first-child{
-              text-decoration: underline;
-              font-size: 120%;color:var(--primary-color);
+              text-decoration: underline;  color: var(--bs-danger);
+              font-size: 130%;
             }
           }
 

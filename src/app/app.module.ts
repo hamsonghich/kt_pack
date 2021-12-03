@@ -42,6 +42,8 @@ import { XopbongkhiComponent } from './xopbongkhi/xopbongkhi.component';
 import {RatingModule} from 'ngx-rating';
 import { BannerSalesComponent } from './banner-sales/banner-sales.component';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { FixContentComponent } from './fix-content/fix-content.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { TrangChuComponent } from './trang-chu/trang-chu.component';
     XopbongkhiComponent,
     BannerSalesComponent,
     TrangChuComponent,
+    SearchResultComponent,
+    FixContentComponent,
   ],
     imports: [
         BrowserModule,

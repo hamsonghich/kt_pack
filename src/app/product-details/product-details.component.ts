@@ -6,13 +6,14 @@ import { DOCUMENT } from '@angular/common';
 import './custom.js';
 import * as $ from 'jquery';
 import {Observable} from 'rxjs';
+import {filter} from 'rxjs/operators';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
 })
 
-export class ProductDetailsComponent implements OnInit{
+export class ProductDetailsComponent implements OnInit,  AfterViewInit{
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -38,6 +39,7 @@ export class ProductDetailsComponent implements OnInit{
     nav: true
   };
   // tslint:disable-next-line:max-line-length
+  private loadAPI: Promise<unknown> | any;
   constructor(public activatedRoute: ActivatedRoute, public dataServicesService: DataServicesService,
               @Inject(DOCUMENT) public document: Document,  public router: Router) {
   }
@@ -46,6 +48,8 @@ export class ProductDetailsComponent implements OnInit{
   private id: Observable<any> | any;
 
   ngOnInit(): void {
+    // tslint:disable-next-line:only-arrow-functions typedef
+    $.getScript('src/assets_v2/js/main.js');
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;
@@ -55,63 +59,22 @@ export class ProductDetailsComponent implements OnInit{
     this.activatedRoute.paramMap.subscribe(params => {
       this.id = params.get('id');
       // tslint:disable-next-line:prefer-for-of
-      for (let i = 0; i < this.dataServicesService.productDetailsList.thungnhuaDanpla.length; i++) {
-        if (this.dataServicesService.productDetailsList.thungnhuaDanpla[i].id.link === this.id) {
-          this.productItem = this.dataServicesService.productDetailsList.thungnhuaDanpla[i];
-        }
-      }
-      // tslint:disable-next-line:prefer-for-of
-      for (let i = 0; i < this.dataServicesService.productDetailsList.vachnhuaDanpla.length; i++) {
-        if (this.dataServicesService.productDetailsList.vachnhuaDanpla[i].id.link === this.id) {
-          this.productItem = this.dataServicesService.productDetailsList.vachnhuaDanpla[i];
-        }
-      }
-      // tslint:disable-next-line:prefer-for-of
-      for (let i = 0; i < this.dataServicesService.productDetailsList.xopEvaPEFoam.length; i++) {
-        if (this.dataServicesService.productDetailsList.xopEvaPEFoam[i].id.link === this.id) {
-          this.productItem = this.dataServicesService.productDetailsList.xopEvaPEFoam[i];
-        }
-      }
-      // tslint:disable-next-line:prefer-for-of
-      for (let i = 0; i < this.dataServicesService.productDetailsList.xopBongKhi.length; i++) {
-        if (this.dataServicesService.productDetailsList.xopBongKhi[i].id.link === this.id) {
-          this.productItem = this.dataServicesService.productDetailsList.xopBongKhi[i];
-        }
-      }
-      console.log(this.productItem);
-      console.log(this.dataServicesService.productDetailsList.thungnhuaDanpla[0].id);
-    });
-    // tslint:disable-next-line:only-arrow-functions typedef
-    $(document).ready(function(){
-     $('.img-item').css({display : 'none'});
-      // tslint:disable-next-line:typedef
-     $( '.item_img_small' ).mouseover(function(){
-        $( this ).addClass( 'active' );
-      });
-      // tslint:disable-next-line:typedef
-     $( '.item_img_small' ).mouseout(function(){
-        $( this ).removeClass( 'active' );
-      });
-      // tslint:disable-next-line:only-arrow-functions typedef
-     $('.content-img').click(function(event){
-        $('.img-fake').css('display', 'none');
-        console.log(event.target.className);
-        const itemImg = document.getElementsByClassName('item_img_small');
-        const itemImgBig = document.getElementsByClassName('img-item');
-        console.log(itemImg[0].className);
-        let idActive;
+      for (let i = 0; i < this.dataServicesService.dataProductDetailsList.length ; i++){
         // tslint:disable-next-line:prefer-for-of
-        for (let i = 0; i < itemImg.length; i++) {
-          if (itemImg[i].className === 'item_img_small ng-star-inserted active') {
-            console.log('id' + itemImg[i].id.replace('img_details', ''));
-            idActive = itemImg[i].id.replace('img_details', '');
-            console.log('ok:' + itemImg[i].className);
-            $('.img-item').css({display: 'none'});
-            // @ts-ignore
-            document.getElementById('idImg' + idActive).style.display = 'block';
+        for (let j = 0; j < this.dataServicesService.dataProductDetailsList[i].length; j++){
+          if (this.dataServicesService.dataProductDetailsList[i][j].id.link === this.id){
+            this.reloadJq();
+            this.productItem = (this.dataServicesService.dataProductDetailsList[i][j]);
           }
         }
-      });
+      }
     });
   }
+  ngAfterViewInit(): any{
+
+  }
+
+  public reloadJq(): any {
+  }
+
 }

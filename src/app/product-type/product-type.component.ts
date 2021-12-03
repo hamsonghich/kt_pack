@@ -34,27 +34,12 @@ export class ProductTypeComponent implements OnInit{
       console.log('id: ' + this.id);
       this.productType.splice(0, this.productType.length);
       // tslint:disable-next-line:prefer-for-of
-      for (let i = 0; i < this.dataServicesService.productDetailsList.thungnhuaDanpla.length; i++){
-        if (this.dataServicesService.productDetailsList.thungnhuaDanpla[i].typeName === this.id){
-          this.productType.push(this.dataServicesService.productDetailsList.thungnhuaDanpla[i]);
-        }
-      }
-      // tslint:disable-next-line:prefer-for-of
-      for ( let i = 0 ; i < this.dataServicesService.productDetailsList.vachnhuaDanpla.length; i++){
-        if (this.dataServicesService.productDetailsList.vachnhuaDanpla[i].typeName === this.id){
-          this.productType.push(this.dataServicesService.productDetailsList.vachnhuaDanpla[i]);
-        }
-      }
-      // tslint:disable-next-line:prefer-for-of
-      for ( let i = 0 ; i < this.dataServicesService.productDetailsList.xopEvaPEFoam.length; i++){
-        if (this.dataServicesService.productDetailsList.xopEvaPEFoam[i].typeName === this.id){
-          this.productType.push(this.dataServicesService.productDetailsList.xopEvaPEFoam[i]);
-        }
-      }
-      // tslint:disable-next-line:prefer-for-of
-      for ( let i = 0 ; i < this.dataServicesService.productDetailsList.xopBongKhi.length; i++){
-        if (this.dataServicesService.productDetailsList.xopBongKhi[i].typeName === this.id){
-          this.productType.push(this.dataServicesService.productDetailsList.xopBongKhi[i]);
+      for (let i = 0; i < this.dataServicesService.dataProductDetailsList.length ; i++){
+        // tslint:disable-next-line:prefer-for-of
+        for (let j = 0; j < this.dataServicesService.dataProductDetailsList[i].length; j++){
+          if (this.dataServicesService.dataProductDetailsList[i][j].typeName.name === this.id){
+            this.productType.push(this.dataServicesService.dataProductDetailsList[i][j]);
+          }
         }
       }
       console.log('ahihi');

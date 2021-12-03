@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid">
   <div class="row row1">
     <div class="col-left">
@@ -11,9 +13,9 @@
         <div class="sort-by-option">
           <div class="typeOption">
             <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-              <mat-button-toggle class="sort-by-option__option">Phổ biến</mat-button-toggle>
+              <mat-button-toggle class="sort-by-option__option" (click)="sortPopular()">Phổ biến</mat-button-toggle>
               <mat-button-toggle class="sort-by-option__option">Mới nhất</mat-button-toggle>
-              <mat-button-toggle class="sort-by-option__option">Bán chạy</mat-button-toggle>
+              <mat-button-toggle class="sort-by-option__option" (click)="sortBestSales()">Bán chạy</mat-button-toggle>
             </mat-button-toggle-group>
           </div>
           <div class="displayPage">
@@ -39,7 +41,7 @@
       </div>
       <div class="list_total_product">
         <ul>
-          <li *ngFor="let item of dataServicesService.productDetailsList.xopBongKhi |
+          <li *ngFor="let item of dataServicesService.dataProductDetailsList[3] |
           paginate: {itemsPerPage: this.chooseItemOfPage, currentPage: page} let i = index">
             <div class="classFakeTop"></div>
             <div class="classFakeBottom"></div>

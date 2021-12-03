@@ -11,11 +11,11 @@ import {any} from 'codelyzer/util/function';
 export class MoreProductComponent implements OnInit {
 
   constructor(public dataServicesService: DataServicesService, public router: Router) { }
-  public pagevachnhuaDanpla = 1;
-  public pagethungnhuaDanpla = 1;
-  public pagexopBongKhi = 1;
-  public pagexopEvaPEFoam = 1;
+  arrFirstPage: any[] = [];
   ngOnInit(): void {
+    for (let i = 0; i < this.dataServicesService.dataProductDetailsList.length; i++){
+      this.arrFirstPage[i] = 1;
+    }
   }
   public exit(): any {
     // setTimeout(() => {

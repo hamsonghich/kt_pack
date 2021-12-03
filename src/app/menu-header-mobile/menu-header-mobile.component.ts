@@ -13,11 +13,8 @@ export class MenuHeaderMobileComponent implements OnInit {
   constructor(public  menuHeader: DataServicesService) {
   }
   ngOnInit(): void {
-    console.log(this.menuHeader.listHeader);
+    // console.log(this.menuHeader.listHeader);
   }
   public exit(): any{
-    setTimeout(() => {
-      location.reload();
-    }, 100);
   }
 }

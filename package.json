@@ -28,6 +28,7 @@
     "bootstrap": "^5.0.0-beta3",
     "jquery": "^3.6.0",
     "jquery-zoom": "^1.7.21",
+    "jsdom": "^18.1.1",
     "jw-paginate": "^1.0.4",
     "material-design-icons": "^3.0.1",
     "ngx-owl-carousel": "^2.0.7",

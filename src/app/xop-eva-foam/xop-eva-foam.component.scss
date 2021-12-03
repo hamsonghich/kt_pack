@@ -94,7 +94,8 @@
               border-radius: 5px;
             }
             ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper{
-              margin:0;
+              margin:0;  background-color: white;
+              border-radius: 5px;
             }
             ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick{
               color: var(--primary-color);
@@ -105,6 +106,10 @@
             width:200px;height: 35px;
             ::ng-deep mat-form-field {
               height: 100%;width: 100%;
+            }
+            ::ng-deep .mat-form-field-outline.ng-star-inserted{
+              background-color: white;
+              border-radius: 5px;
             }
             ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper{
               margin:0;height: 100%;
@@ -120,7 +125,7 @@
               border-radius: 5px;
             }
             ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
-              padding: 13px 0;
+              padding: 11px 0;
             }
             ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick{
               color: var(--primary-color);
@@ -139,6 +144,7 @@
           justify-content: flex-start;
 
           li {
+            transition: all 0.35s ease-in;
             position: relative;
             background-color: white;
             width: 22.5%;
@@ -292,6 +298,7 @@
                     overflow: hidden;
                     color: orange;
                   }
+
                 }
 
                 .addressProduct {
@@ -320,6 +327,8 @@
             animation: animationHeight 1s linear infinite;
           }
           li:hover{
+            transform: scale(1.05);  transition: all 0.35s ease-in;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             .classFakeTop{
               position: absolute;
               background-color: var(--primary-color);top:-1px;right: 0;
@@ -332,7 +341,7 @@
             }
             .custom-img{
               img.img-main {
-                transform: scale(1.1);
+                transform: scale(1.15);
                 transition: all 0.35s ease-in;
               }
 

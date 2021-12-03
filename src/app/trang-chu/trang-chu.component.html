@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid">
   <div class="row row1">
     <div class="col-left">
@@ -85,7 +87,7 @@
       <div class="col-left">
         <p class="col-left__title">sản phẩm bán chạy</p>
         <ul>
-          <li *ngFor="let item of dataServicesService.productDetailsList.thungnhuaDanpla | slice:0:3;">
+          <li *ngFor="let item of dataServicesService.dataProductDetailsList[0] | slice:0:3;">
             <div class="content-selling" routerLink="/productDetails/{{item.id.link}}">
               <div class="content-selling__left">
                 <img src="{{item.img[0].link}}" alt="{{item.img[0].name}}">
@@ -102,7 +104,7 @@
         <p class="title-header1">Sản phẩm nổi bật</p>
         <div class="col-mid__slide">
           <owl-carousel-o [options]="customOptionsItem">
-            <ng-container *ngFor="let slide of dataServicesService.productDetailsList.thungnhuaDanpla">
+            <ng-container *ngFor="let slide of dataServicesService.dataProductDetailsList[0]">
               <ng-template carouselSlide>
                 <div class="content-item">
                   <div class="content-item__img">
@@ -196,7 +198,7 @@
       <div class="col-left">
         <p class="col-left__title">sản phẩm bán chạy</p>
         <ul>
-          <li *ngFor="let item of dataServicesService.productDetailsList.vachnhuaDanpla | slice:0:3;">
+          <li *ngFor="let item of dataServicesService.dataProductDetailsList[1] | slice:0:3;">
             <div class="content-selling" routerLink="/productDetails/{{item.id.link}}">
               <div class="content-selling__left">
                 <img src="{{item.img[0].link}}" alt="{{item.img[0].name}}">
@@ -213,7 +215,7 @@
         <p class="title-header1">Sản phẩm nổi bật</p>
         <div class="col-mid__slide">
           <owl-carousel-o [options]="customOptionsItem">
-            <ng-container *ngFor="let slide of dataServicesService.productDetailsList.vachnhuaDanpla">
+            <ng-container *ngFor="let slide of dataServicesService.dataProductDetailsList[1]">
               <ng-template carouselSlide>
                 <div class="content-item">
                   <div class="content-item__img">
@@ -308,7 +310,7 @@
       <div class="col-left">
         <p class="col-left__title">sản phẩm bán chạy</p>
         <ul>
-          <li *ngFor="let item of dataServicesService.productDetailsList.xopEvaPEFoam | slice:0:3;">
+          <li *ngFor="let item of dataServicesService.dataProductDetailsList[2] | slice:0:3;">
             <div class="content-selling" routerLink="/productDetails/{{item.id.link}}">
               <div class="content-selling__left">
                 <img src="{{item.img[0].link}}" alt="{{item.img[0].name}}">
@@ -325,7 +327,7 @@
         <p class="title-header1">Sản phẩm nổi bật</p>
         <div class="col-mid__slide">
           <owl-carousel-o [options]="customOptionsItem">
-            <ng-container *ngFor="let slide of dataServicesService.productDetailsList.xopEvaPEFoam">
+            <ng-container *ngFor="let slide of dataServicesService.dataProductDetailsList[2]">
               <ng-template carouselSlide>
                 <div class="content-item">
                   <div class="content-item__img">
@@ -419,7 +421,7 @@
       <div class="col-left">
         <p class="col-left__title">sản phẩm bán chạy</p>
         <ul>
-          <li *ngFor="let item of dataServicesService.productDetailsList.xopBongKhi | slice:0:3;">
+          <li *ngFor="let item of dataServicesService.dataProductDetailsList[3] | slice:0:3;">
             <div class="content-selling" routerLink="/productDetails/{{item.id.link}}">
               <div class="content-selling__left">
                 <img src="{{item.img[0].link}}" alt="{{item.img[0].name}}">
@@ -436,7 +438,7 @@
         <p class="title-header1">Sản phẩm nổi bật</p>
         <div class="col-mid__slide">
           <owl-carousel-o [options]="customOptionsItem">
-            <ng-container *ngFor="let slide of dataServicesService.productDetailsList.xopBongKhi">
+            <ng-container *ngFor="let slide of dataServicesService.dataProductDetailsList[3]">
               <ng-template carouselSlide>
                 <div class="content-item">
                   <div class="content-item__img">
@@ -502,6 +504,10 @@
       </div>
     </div>
   </div>
+  <div class="row row4">
+    <div style="margin-top: 20px;"></div>
+    <app-footer-main></app-footer-main>
+  </div>
 </div>
-<div style="margin-top: 20px;"></div>
-<app-footer-main></app-footer-main>
+
+
