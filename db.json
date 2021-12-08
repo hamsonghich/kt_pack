@@ -1,0 +1,144 @@
+{
+  "listHeader": [
+    {
+      "mother": {
+        "name": "TRANG CHỦ",
+        "link": "/trangchu"
+      },
+      "child": []
+    },
+    {
+      "mother": {
+        "name": "GIỚI THIỆU",
+        "link": "/gioithieu"
+      },
+      "child": []
+    },
+    {
+      "mother": {
+        "name": "THÙNG NHỰA DANPLA",
+        "link": "/thungnhuadanpla"
+      },
+      "child": [
+        {
+          "name": "Thùng Danpla cố định, nắp chồng",
+          "link": "/productType/thungnhuaDanplaCoDinhNapChong"
+        },
+        {
+          "name": "Thùng Danpla cố định, nắp chồng, thùng chống tĩnh điện",
+          "link": "/productType/thungDanplaCoDinhNapChongChongTinhDien"
+        },
+        {
+          "name": "Thùng Danpla cố định, nắp nhựa chống tĩnh điện",
+          "link": "/productType/thungDanplaCoDinhNapNhuaChongTinhDien"
+        },
+        {
+          "name": "Thùng Danpla cố định, nắp gập",
+          "link": "/productType/thungnhuaDanplaCoDinhNapGap"
+        },
+        {
+          "name": "Thùng Danpla gập 1",
+          "link": "/productType/thungDanplaGap1"
+        },
+        {
+          "name": "Thùng Danpla gập 2",
+          "link": "/productType/thungDanplaGap2"
+        }
+      ]
+    },
+    {
+      "mother": {
+        "name": "VÁCH NHỰA DANPLA",
+        "link": "/vachnhuadanpla"
+      },
+      "child": [
+        {
+          "name": "Vách ngăn Danpla 1",
+          "link": "/productType/vachnhuaDanpla1"
+        },
+        {
+          "name": "Vách ngăn Danpla 2",
+          "link": "/productType/vachnhuaDanpla2"
+        }
+      ]
+    },
+    {
+      "mother": {
+        "name": "XỐP EVA - XỐP PE FOAM",
+        "link": "/xopEvaPeFoam"
+      },
+      "child": [
+        {
+          "name": "Xốp Pe Foam thường",
+          "link": "/productType/xopPeFoamthuong"
+        },
+        {
+          "name": "Xốp Pe Foam Chống tĩnh điện",
+          "link": "/productType/xopPeFoamchongtinhdien"
+        },
+        {
+          "name": "Xốp Pe Foam tấm loại thường và chống tĩnh điện",
+          "link": "/productType/xopPeFoamcuonloaithuongchongtinhdien"
+        },
+        {
+          "name": "Xốp Pe Foam cuộn  loại thường và chống tĩnh điện",
+          "link": "/productType/xopPeFoamtamloaithuongchongtinhdien"
+        }
+      ]
+    },
+    {
+      "mother": {
+        "name": "XỐP BÓNG KHÍ",
+        "link": "/xopbongkhi"
+      },
+      "child": [
+        {
+          "name": "Túi bóng khí chống va đập loại thường",
+          "link": "/productType/xopbongkhiloaithuong"
+        },
+        {
+          "name": "Tấm bóng khí chống va đập loại chống tĩnh điện",
+          "link": "/productType/xopbongkhiloaichongtinhdien"
+        }
+      ]
+    },
+    {
+      "mother": {
+        "name": "TIN TỨC",
+        "link": "/tintuc"
+      },
+      "child": []
+    },
+    {
+      "mother": {
+        "name": "LIÊN HỆ",
+        "link": "/lienhe"
+      },
+      "child": []
+    }
+  ],
+  "infoCompany": {
+    "phone": [
+      "+(84) 393483309",
+      "+(84) 393483309"
+    ],
+    "email": [
+      "ktpack.vn@gmail.com",
+      "www.ktpack.com"
+    ],
+    "address": [
+      "Nhà máy Nga Nhân Lý Thanh Long, Yên Mĩ, Hưng Yên"
+    ]
+  },
+  "infoCustomer": {},
+  "infoCompanyList": {},
+  "addressCompany": {},
+  "timeWork": {},
+  "introduceCompany": {},
+  "copyRight": {},
+  "linkImg": {},
+  "dataProductDetailsList": {},
+  "promotionNew": {},
+  "bannerImgTrangchu": {},
+  "productSale": {}
+}

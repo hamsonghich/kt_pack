@@ -19,6 +19,7 @@ export class ThungnhuaDanplaComponent implements OnInit {
   ];
   public choosePriceSortArr = this.priceSortArr[0];
   ngOnInit(): void {
+    console.log(this.dataServicesService.dataProductDetailsList);
     console.log(this.chooseItemOfPage);
     $( document ).ready(function() {
       $(window).scrollTop(0);

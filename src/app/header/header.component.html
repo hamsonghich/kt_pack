@@ -16,25 +16,25 @@
       <div class="container-listMenuTop">
         <ul>
           <li class="order-check">
-            <a href="">
+            <a>
               <i class="fa fa-edit mr-2"></i>
               <span>Kiểm tra đơn hàng</span>
             </a>
           </li>
           <li class="order-cart">
-            <a href="">
-              <i class="fa fa-shopping-cart mr-2"></i>
+            <a  routerLink="/cart" routerLinkActive="$routerLinkActive">
+              <i matBadge="{{this.dataServicesService.dataCart1.length}}"  matBadgeSize="small" matBadgeColor="accent" class="fa fa-shopping-cart mr-2"></i>
               <span>Giỏ hàng</span>
             </a>
           </li>
           <li class="account-login">
-            <a href="">
+            <a >
               <i class="fa fa-sign-in-alt mr-2"></i>
               <span>Đăng nhập</span>
             </a>
           </li>
           <li class="account-register">
-            <a href="">
+            <a>
               <i class="fa fa-key mr-2"></i>
               <span>Đăng kí</span>
             </a>

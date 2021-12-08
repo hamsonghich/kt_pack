@@ -1,0 +1,11 @@
+<p>input get data want get: </p>
+<input type="text" [(ngModel)]="keyInputGet">
+<button (click)="getData()">get data</button>
+
+<p>input post data want get: </p>
+<input type="text" [(ngModel)]="keyInputPost">
+<button (click)="postData()">post data</button>
+
+<div>
+  {{dataAddCart1|json}}
+</div>

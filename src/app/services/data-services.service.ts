@@ -2,6 +2,7 @@ import {Injectable, OnInit} from '@angular/core';
 import {HeaderComponent} from '../header/header.component';
 import {data, param} from 'jquery';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import {any} from 'codelyzer/util/function';
 
 interface ListHeader {
   mother: { name: any, link: any };
@@ -100,8 +101,6 @@ interface ProductDetailsList {
       description: { title: string, contentParam: { param1: string, param2: string }[] }[];
     }[];
 }
-
-
 interface PromotionNew {
   paramTitle: any[];
   paramImg: any[];
@@ -114,6 +113,8 @@ interface PromotionNew {
 })
 
 export class DataServicesService {
+  public tickAll = new BehaviorSubject(false);
+  public dataAddCartItem$ = new BehaviorSubject<any>([]);
   public currentNameSubject$ = new BehaviorSubject<any>([]);
   public linkSocial = {
     facebook: 'https://www.facebook.com/KT-PACK-111975614638829',
@@ -223,6 +224,7 @@ export class DataServicesService {
   public dataProductDetailsList = [
     [
         {
+          addCart: false,
           typeName: {name: 'thungnhuaDanplaCoDinhNapChong', id: 'thung'},
           id: {name: 'Thùng nhựa cố định nắp chồng', link: 'thungnhuadanplaCoDinhNapChong'},
           img: [
@@ -274,6 +276,7 @@ export class DataServicesService {
           ]
         },
         {
+        addCart: false,
         typeName: {name: 'thungnhuaDanplaCoDinhNapChong', id: 'thung'},
         id: {name: 'Thùng nhựa cố định nắp chồng', link: 'thungnhuadanplaCoDinhNapChong'},
         img: [
@@ -325,6 +328,7 @@ export class DataServicesService {
         ]
       },
         {
+          addCart: false,
           typeName: {name:  'thungnhuaDanplaCoDinhNapGap', id: 'thung'},
           id: {name: 'Thùng nhựa Danpla cố định, nắp gập', link: 'thungnhuadanplaCoDinhNapGap'},
           img: [
@@ -376,6 +380,7 @@ export class DataServicesService {
           ]
         },
         {
+          addCart: false,
           typeName: {name: 'thungDanplaGap1', id: 'thung'},
           id: {name: 'Thùng nhựa Danpla gập 1', link: 'thungDanplaGap1'},
           img: [
@@ -424,6 +429,7 @@ export class DataServicesService {
           ]
         },
         {
+          addCart: false,
           typeName: {name: 'thungDanplaGap2', id: 'thung'},
           id: {name: 'Thùng nhựa Danpla gập 2', link: 'thungDanplaGap2'},
           img: [
@@ -472,6 +478,7 @@ export class DataServicesService {
           ]
         },
         {
+          addCart: false,
           typeName: {name: 'thungDanplaCoDinhNapChongChongTinhDien', id: 'thung'},
           id: {name: 'Thùng Danpla cố định, nắp chồng, Thùng chống tĩnh điện', link: 'thungDanplaCoDinhNapChongChongTinhDien'},
           img: [
@@ -538,6 +545,7 @@ export class DataServicesService {
           ]
         },
         {
+          addCart: false,
           typeName: {name: 'thungDanplaCoDinhNapNhuaChongTinhDien', id: 'thung'},
           id: {name: 'Thùng Danpla cố định, nắp nhựa chống tĩnh điện', link: 'thungDanplaCoDinhNapNhuaChongTinhDien'},
           img: [
@@ -604,6 +612,7 @@ export class DataServicesService {
           ]
         },
         {
+          addCart: false,
           typeName: {name: '', id: 'thung'},
           id: {name: 'empty', link: 'empty'},
           img: [
@@ -651,6 +660,7 @@ export class DataServicesService {
           ]
         },
       {
+        addCart: false,
         typeName: {name: '', id: 'thung'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -698,6 +708,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'thung'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -745,6 +756,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'thung'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -792,6 +804,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'thung'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -839,6 +852,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'thung'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -886,6 +900,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'thung'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -933,6 +948,151 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
+        typeName: {name: '', id: 'thung'},
+        id: {name: 'empty', link: 'empty'},
+        img: [
+          {name: '', link: ''},
+          {name: '', link: ''}, {name: '', link: ''},
+          {name: '', link: ''},
+          {name: '', link: ''},
+          {name: '', link: ''},
+        ],
+        address: {name: 'Hà Nội'},
+        price: {name: 'Liên hệ'},
+        sellNumber: {number: this.getRandomInt(1, 2)},
+        like: false,
+        star: {number: 5},
+        discount: {number: this.getRandomInt1(10, 30)},
+        evaluate: {number: this.getRandomInt1(100, 1000)},
+        description: [
+          {
+            title: '1. GIỚI THIỆU SẢN PHẨM', contentParam: [
+              {
+                param1: 'Thùng nhựa danpla được Công ty cổ phần sản xuất KT-PACK chúng tôi thiết kế có nắp nhám dính, giúp cho doanh việc các bạn có thể bảo quản đựng hàng hóa tốt hơn, chống lại những ảnh hưởng của thời tiết, khí hậu , nấm mốc',
+                param2: ''
+              },
+              {
+                param1: 'Ngoài những loại Thùng nhựa cố định nắp chồng, cty chúng tôi còn nhiều các mẫu mã thùng nhưa danpla khác nhau.Ví dụ như thùng nhựa danpla chống tĩnh điện, thùng nhựa danpla có nắp tay cầm, khay nhựa danpla...Nếu bạn đang quan tấm đến các loại thùng nhựa danpla có nắp dính, vui lòng liên hệ tới số điện thoại Cty chúng tôi',
+                param2: ''
+              },
+              {
+                param1: ' ' + this.infoCompany.phone[0] + ', Hotline:' + this.infoCompany.phone[1] + 'để đỗi ngũ nhân viên kinh doanh và kỹ thuật bên chúng tôi có thể giúp cho bạn tìm được sản phẩm tốt nhất và bảng báo giá.',
+                param2: ''
+              },
+            ]
+          },
+          {
+            title: '2. Thông tin kỹ thuật sản phẩm thùng nhựa danpla có nắp  chồng', contentParam: [
+              {param1: 'Kích thước ngoài', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Kích thước trong', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Độ dày ', param2: '2, 3, 4, 5  mm'},
+              {param1: 'Trọng lượng', param2: 'g'},
+              {param1: 'Nguyên liệu', param2: '100% nhựa Danpla thường'},
+              {param1: 'Độ chống tĩnh điện', param2: 'Không'},
+              {param1: 'Màu sắc', param2: 'Trắng, xanh dương, xanh lá, vàng, cam, tím, xám.'},
+            ]
+          },
+        ]
+      },
+      {
+        addCart: false,
+        typeName: {name: '', id: 'thung'},
+        id: {name: 'empty', link: 'empty'},
+        img: [
+          {name: '', link: ''},
+          {name: '', link: ''}, {name: '', link: ''},
+          {name: '', link: ''},
+          {name: '', link: ''},
+          {name: '', link: ''},
+        ],
+        address: {name: 'Hà Nội'},
+        price: {name: 'Liên hệ'},
+        sellNumber: {number: this.getRandomInt(1, 2)},
+        like: false,
+        star: {number: 5},
+        discount: {number: this.getRandomInt1(10, 30)},
+        evaluate: {number: this.getRandomInt1(100, 1000)},
+        description: [
+          {
+            title: '1. GIỚI THIỆU SẢN PHẨM', contentParam: [
+              {
+                param1: 'Thùng nhựa danpla được Công ty cổ phần sản xuất KT-PACK chúng tôi thiết kế có nắp nhám dính, giúp cho doanh việc các bạn có thể bảo quản đựng hàng hóa tốt hơn, chống lại những ảnh hưởng của thời tiết, khí hậu , nấm mốc',
+                param2: ''
+              },
+              {
+                param1: 'Ngoài những loại Thùng nhựa cố định nắp chồng, cty chúng tôi còn nhiều các mẫu mã thùng nhưa danpla khác nhau.Ví dụ như thùng nhựa danpla chống tĩnh điện, thùng nhựa danpla có nắp tay cầm, khay nhựa danpla...Nếu bạn đang quan tấm đến các loại thùng nhựa danpla có nắp dính, vui lòng liên hệ tới số điện thoại Cty chúng tôi',
+                param2: ''
+              },
+              {
+                param1: ' ' + this.infoCompany.phone[0] + ', Hotline:' + this.infoCompany.phone[1] + 'để đỗi ngũ nhân viên kinh doanh và kỹ thuật bên chúng tôi có thể giúp cho bạn tìm được sản phẩm tốt nhất và bảng báo giá.',
+                param2: ''
+              },
+            ]
+          },
+          {
+            title: '2. Thông tin kỹ thuật sản phẩm thùng nhựa danpla có nắp  chồng', contentParam: [
+              {param1: 'Kích thước ngoài', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Kích thước trong', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Độ dày ', param2: '2, 3, 4, 5  mm'},
+              {param1: 'Trọng lượng', param2: 'g'},
+              {param1: 'Nguyên liệu', param2: '100% nhựa Danpla thường'},
+              {param1: 'Độ chống tĩnh điện', param2: 'Không'},
+              {param1: 'Màu sắc', param2: 'Trắng, xanh dương, xanh lá, vàng, cam, tím, xám.'},
+            ]
+          },
+        ]
+      },
+      {
+        addCart: false,
+        typeName: {name: '', id: 'thung'},
+        id: {name: 'empty', link: 'empty'},
+        img: [
+          {name: '', link: ''},
+          {name: '', link: ''}, {name: '', link: ''},
+          {name: '', link: ''},
+          {name: '', link: ''},
+          {name: '', link: ''},
+        ],
+        address: {name: 'Hà Nội'},
+        price: {name: 'Liên hệ'},
+        sellNumber: {number: this.getRandomInt(1, 2)},
+        like: false,
+        star: {number: 5},
+        discount: {number: this.getRandomInt1(10, 30)},
+        evaluate: {number: this.getRandomInt1(100, 1000)},
+        description: [
+          {
+            title: '1. GIỚI THIỆU SẢN PHẨM', contentParam: [
+              {
+                param1: 'Thùng nhựa danpla được Công ty cổ phần sản xuất KT-PACK chúng tôi thiết kế có nắp nhám dính, giúp cho doanh việc các bạn có thể bảo quản đựng hàng hóa tốt hơn, chống lại những ảnh hưởng của thời tiết, khí hậu , nấm mốc',
+                param2: ''
+              },
+              {
+                param1: 'Ngoài những loại Thùng nhựa cố định nắp chồng, cty chúng tôi còn nhiều các mẫu mã thùng nhưa danpla khác nhau.Ví dụ như thùng nhựa danpla chống tĩnh điện, thùng nhựa danpla có nắp tay cầm, khay nhựa danpla...Nếu bạn đang quan tấm đến các loại thùng nhựa danpla có nắp dính, vui lòng liên hệ tới số điện thoại Cty chúng tôi',
+                param2: ''
+              },
+              {
+                param1: ' ' + this.infoCompany.phone[0] + ', Hotline:' + this.infoCompany.phone[1] + 'để đỗi ngũ nhân viên kinh doanh và kỹ thuật bên chúng tôi có thể giúp cho bạn tìm được sản phẩm tốt nhất và bảng báo giá.',
+                param2: ''
+              },
+            ]
+          },
+          {
+            title: '2. Thông tin kỹ thuật sản phẩm thùng nhựa danpla có nắp  chồng', contentParam: [
+              {param1: 'Kích thước ngoài', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Kích thước trong', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Độ dày ', param2: '2, 3, 4, 5  mm'},
+              {param1: 'Trọng lượng', param2: 'g'},
+              {param1: 'Nguyên liệu', param2: '100% nhựa Danpla thường'},
+              {param1: 'Độ chống tĩnh điện', param2: 'Không'},
+              {param1: 'Màu sắc', param2: 'Trắng, xanh dương, xanh lá, vàng, cam, tím, xám.'},
+            ]
+          },
+        ]
+      },
+      {
+        addCart: false,
         typeName: {name: '', id: 'thung'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -982,6 +1142,7 @@ export class DataServicesService {
     ],
     [
         {
+          addCart: false,
           typeName: {name: 'vachnhuaDanpla1', id: 'vach'},
           id: {name: 'Vách ngăn Danpla 1', link: 'vachnhuaDanpla1'},
           img: [
@@ -1027,6 +1188,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'vachnhuaDanpla2', id: 'vach'},
           id: {name: 'Vách ngăn Danpla 2', link: 'vachnhuaDanpla2'},
           img: [
@@ -1075,6 +1237,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'vachnhuaDanpla1', id: 'vach'},
           id: {name: 'Vách ngăn Danpla 1', link: 'vachnhuaDanpla1'},
           img: [
@@ -1122,6 +1285,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'vachnhuaDanpla2', id: 'vach'},
           id: {name: 'Vách ngăn Danpla 2', link: 'vachnhuaDanpla2'},
           img: [
@@ -1170,6 +1334,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: '', id: 'vach'},
           id: {name: 'empty', link: 'empty'},
           img: [
@@ -1217,6 +1382,7 @@ export class DataServicesService {
           ]
         },
       {
+        addCart: false,
         typeName: {name: '', id: 'vach'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -1264,6 +1430,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'vach'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -1311,6 +1478,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'vach'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -1358,6 +1526,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'vach'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -1405,6 +1574,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'vach'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -1452,6 +1622,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'vach'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -1502,6 +1673,7 @@ export class DataServicesService {
     [
 
         {
+          addCart: false,
           typeName: {name: 'xopPeFoamthuong', id: 'xopEvaFoam'},
           id: {name: 'xốp PE FOAM thường 1', link: 'xopEvaPeFoam_thuong_1'},
           img: [
@@ -1548,6 +1720,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopPeFoamthuong', id: 'xopEvaFoam'},
           id: {name: 'xốp PE FOAM thường 2', link: 'xopEvaPeFoam_thuong_2'},
           img: [
@@ -1594,6 +1767,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopPeFoamthuong', id: 'xopEvaFoam'},
           id: {name: 'xốp PE FOAM thường 3', link: 'xopEvaPeFoam_thuong_3'},
           img: [
@@ -1640,6 +1814,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopPeFoamthuong', id: 'xopEvaFoam'},
           id: {name: 'xốp PE FOAM thường 4', link: 'xopEvaPeFoam_thuong_4'},
           img: [
@@ -1686,6 +1861,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopPeFoamchongtinhdien', id: 'xopEvaFoam'},
           id: {name: 'xốp PE FOAM chống tĩnh điện 1', link: 'xopEvaPeFoamchongtinhdien1'},
           img: [
@@ -1740,6 +1916,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopPeFoamchongtinhdien', id: 'xopEvaFoam'},
           id: {name: 'xốp PE FOAM chống tĩnh điện 2', link: 'xopEvaPeFoamchongtinhdien2'},
           img: [
@@ -1794,6 +1971,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopPeFoamcuonloaithuongchongtinhdien', id: 'xopEvaFoam'},
           id: {name: 'xốp PE FOAM cuộn loại thường chống tĩnh điện', link: 'xopEvaPeFoamcuonloaithuongchongtinhdien'},
           img: [
@@ -1851,6 +2029,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopPeFoamtamloaithuongchongtinhdien', id: 'xopEvaFoam'},
           id: {name: 'xốp PE FOAM tấm loại thường chống tĩnh điện', link: 'xopEvaPeFoamtấmloaithuongchongtinhdien'},
           img: [
@@ -1903,6 +2082,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: '', id: 'xopEvaFoam'},
           id: {name: 'empty', link: 'empty'},
           img: [
@@ -1950,6 +2130,7 @@ export class DataServicesService {
           ]
         },
       {
+        addCart: false,
         typeName: {name: '', id: 'xopEvaFoam'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -1997,6 +2178,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'xopEvaFoam'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -2044,6 +2226,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'xopEvaFoam'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -2091,6 +2274,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'xopEvaFoam'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -2138,6 +2322,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'xopEvaFoam'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -2188,6 +2373,7 @@ export class DataServicesService {
     ],
     [
         {
+          addCart: false,
           typeName: {name: 'xopbongkhiloaithuong', id: 'xopbongkhi'},
           id: {name: 'xốp bóng khí chống va đập loại thường', link: 'xopbongkhiloaithuong'},
           img: [
@@ -2250,6 +2436,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopbongkhiloaichongtinhdien', id: 'xopbongkhi'},
           id: {name: 'xốp bóng khí chống va đập loại chống tĩnh điện', link: 'xopbongkhiloaichongtinhdien'},
           img: [
@@ -2312,6 +2499,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopbongkhiloaithuong', id: 'xopbongkhi'},
           id: {name: 'xốp bóng khí chống va đập loại thường', link: 'xopbongkhiloaithuong'},
           img: [
@@ -2374,6 +2562,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: 'xopbongkhiloaichongtinhdien', id: 'xopbongkhi'},
            id: {name: 'xốp bóng khí chống va đập loại chống tĩnh điện', link: 'xopbongkhiloaichongtinhdien'},
           img: [
@@ -2436,6 +2625,7 @@ export class DataServicesService {
           ],
         },
         {
+          addCart: false,
           typeName: {name: '', id: 'xopbongkhi'},
           id: {name: 'empty', link: 'empty'},
           img: [
@@ -2483,6 +2673,7 @@ export class DataServicesService {
           ]
         },
       {
+        addCart: false,
         typeName: {name: '', id: 'xopbongkhi'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -2530,6 +2721,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'xopbongkhi'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -2577,6 +2769,7 @@ export class DataServicesService {
         ]
       },
       {
+        addCart: false,
         typeName: {name: '', id: 'xopbongkhi'},
         id: {name: 'empty', link: 'empty'},
         img: [
@@ -2659,8 +2852,37 @@ export class DataServicesService {
   public dataSearchHeader: any[] = [];
   public dataSearchHeader1: any[] = [];
   public dataS: any[] = [];
+  public dataCart: any[] = [];
+  public dataCart1: any[] = [];
   public key: any;
+  public dataAddCartTotal: any[] = [];
+  public counter = 0;
+  public tickAll1 = false;
   constructor() {
+    this.tickAll.subscribe(item => {
+      setTimeout(() => {
+        this.tickAll1 = item;
+      }, 350);
+    });
+    this.dataAddCartItem$.subscribe(item => {
+      this.dataCart.splice(0, this.dataCart.length);
+      item.forEach((item1: any) => {
+        item1.quantity = 1;
+        item1.checkBoxItem = false;
+        this.dataCart.push(item1);
+        this.counter = this.dataCart.length;
+        console.log('---------ii---------');
+        console.log(this.dataCart);
+      });
+      this.dataCart.forEach(item2 => {
+        this.dataCart1.push(item2);
+      });
+      console.log('----------data--------');
+      console.log(this.dataCart1);
+      this.dataCart1 = this.unique(this.dataCart1);
+
+
+    });
     // this.dataConvert = [...this.productDetailsListTotal];
     // tslint:disable-next-line:prefer-for-of
     // this.productDetailsListTotal.forEach((item) => {
@@ -2721,5 +2943,47 @@ export class DataServicesService {
     str = str.toString().replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ''); // huyền, sắc, hỏi, ngã, nặng
     str = str.toString().replace(/\u02C6|\u0306|\u031B/g, ''); // mũ â (ê), mũ ă, mũ ơ (ư)
     return str.toLowerCase();
+  }
+  public unique(arr: any[]): any{
+    const newArr: any[] = [];
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < arr.length; i++){
+      if (!newArr.includes(arr[i])){
+        newArr.push(arr[i]);
+      }
+    }
+    return newArr;
+  }
+  public tang(i: number): any{
+    console.log('tang');
+    this.dataCart1[i].quantity++;
+  }
+  public giam(i: number): any{
+    console.log('giam');
+    this.dataCart1[i].quantity--;
+  }
+  public deleteItemCard(i: number): any{
+     this.dataCart1.splice(i, 1);
+  }
+  public checkBoxItem1(i: number): any{
+    // alert(this.dataCart1[i].checkBoxItem);
+  }
+  public deleteAllItemCart(): any{
+    this.dataCart1.splice(0, this.dataCart1.length);
+  }
+  public checkBoxALL(bool: boolean): any{
+    setTimeout(() => {
+      console.log('boolean: ' + bool);
+      if (bool){
+        this.dataCart1.forEach(item => {
+          item.checkBoxItem = true;
+        });
+      }
+      else{
+        this.dataCart1.forEach(item => {
+          item.checkBoxItem = false;
+        });
+      }
+    }, 100);
   }
 }

@@ -13,25 +13,18 @@
             <div class="content-img__avatar--fake"></div>
             <div class="content-img__avatar--fake1"></div>
             <div class="tagDiscount">
-              <p>{{productItem.discount.number}}%</p>
+              <p>{{productItem1.discount.number}}%</p>
               <p>GIẢM</p>
             </div>
-            <img class="img-fake" src="{{ productItem.img[0].link}}" alt="">
-            <img id="idImg{{i}}" *ngFor="let item of productItem.img; let i = index"
-                   class="img-item"
-                 src="{{item.link}}"
-                 alt="{{item.name}}">
+            <img id="idImg{{i}}" *ngFor="let item of productItem1.img | slice: 0: 4;let i = index " class="img-item" src="{{item.link}}" alt="{{item.name}}">
           </div>
           <div class="content-img__slider">
-
-            <owl-carousel-o [options]="customOptions">
-              <ng-container *ngFor="let item of productItem.img; let i = index">
-                <ng-template carouselSlide>
-                  <img class="item_img_small" id="img_details{{i}}" [src]="item.link" [alt]="item.name"
-                       [title]="item.name">
-                </ng-template>
-              </ng-container>
-            </owl-carousel-o>
+            <ul>
+              <li (click)="clickImg(i)" *ngFor="let item of productItem1.img | slice: 0: 4; let i = index" >
+                <img  class="item_img_small" id="img_details{{i}}" src="{{item.link}}" alt="{{item.name}}"
+                     [title]="item.name">
+              </li>
+            </ul>
 
           </div>
         </div>
@@ -42,37 +35,38 @@
               <span>Yêu Thích</span>
             </div>
             <p class="box-caption_1">
-              {{productItem.id.name}}
+              {{productItem1.id.name}}
             </p>
           </div>
           <div class="rating">
-            <span class="numberStar">{{productItem.star.number}}</span>
+            <span class="numberStar">{{productItem1.star.number}}</span>
             <div class="class-one1">
               <ng-template #t1 let-fill="fill">
                         <span class="star" [class.full]="fill === 100">
                           <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
                         </span>
               </ng-template>
-              <ngb-rating [(rate)]="productItem.star.number" [starTemplate]="t1" [readonly]="true"
+              <ngb-rating [(rate)]="productItem1.star.number" [starTemplate]="t1" [readonly]="true"
                           [max]="5"></ngb-rating>
             </div>
-            <div class="evaluate"><u>{{productItem.evaluate.number}}</u> <span>Đánh Giá</span></div>
+            <div class="evaluate"><u>{{productItem1.evaluate.number}}</u> <span>Đánh Giá</span></div>
             <div class="sellNumber">
-              <u>{{productItem.sellNumber.number}}k </u> <span>Đã Bán</span>
+              <u>{{productItem1.sellNumber.number}}k </u> <span>Đã Bán</span>
             </div>
 
           </div>
 
           <div class="caption_info">
             <p>Tình trạng hàng: Còn Hàng</p>
-            <p>Lượt xem: {{productItem.evaluate.number * 2}}</p>
+            <p>Lượt xem: {{productItem1.evaluate.number * 2}}</p>
             <p>Kho Hàng: liên hệ {{dataServicesService.infoCompany.phone[0]}} báo giá tại kho sản xuất</p>
             <p>Giá : <span>Liên Hệ</span></p>
             <p>Nhận Báo Giá : <strong href="tel:0915220153"
                                       style="color: #ff4500"> {{dataServicesService.infoCompany.phone[0]}}
               || {{dataServicesService.infoCompany.phone[1]}}</strong></p>
-            <p>Nơi cung cấp : <strong style="color: #ff4500"> {{productItem.address.name}}</strong></p>
-            <p>Mô tả ngắn : {{productItem.id.name}}</p>
+            <p>Nơi cung cấp : <strong style="color: #ff4500"> {{productItem1.address.name}}</strong></p>
+            <p>Mô tả ngắn : {{productItem1.id.name}}</p>
+            <button  [disabled]="productItem1.addCart" class="addCart" (click)="addCart()" ><i class="far fa-cart-plus"></i> <span>Thêm vào giỏ hàng</span></button>
           </div>
 
           <div class="socials-share">
@@ -89,19 +83,27 @@
             </div>
           </div>
         </div>
+
+        <div class="toastAddCart">
+          <ul>
+            <li></li>
+            <li><i class="fas fa-check-circle"></i> <span>Đã thêm sản phẩm vào giỏ hàng !</span></li>
+            <li><button><i class="fas fa-times"></i></button></li>
+          </ul>
+        </div>
       </div>
 
       <div class="col-right__level2">
         <div class="description-product">
           <p class="description-product__title"><span>Mô tả sản phẩm</span></p>
           <div class="description-product__intro">
-            <span>{{productItem.description[0].title}}</span><br>
-            <p *ngFor="let item of productItem.description[0].contentParam">{{item.param1}}</p>
+            <span>{{productItem1.description[0].title}}</span><br>
+            <p *ngFor="let item of productItem1.description[0].contentParam">{{item.param1}}</p>
 
-            <span>{{productItem.description[1].title}}</span>
+            <span>{{productItem1.description[1].title}}</span>
             <div class="container-table">
               <table>
-                <tr *ngFor="let item of productItem.description[1].contentParam">
+                <tr *ngFor="let item of productItem1.description[1].contentParam">
                   <td>{{item.param1}}</td>
                   <td>{{item.param2}}</td>
                 </tr>
@@ -116,7 +118,7 @@
 
       <div class="col-right__level3">
         <div>
-          <app-more-product></app-more-product>
+          <app-more-product (click)="reload()"></app-more-product>
 
         </div>
       </div>
@@ -129,7 +131,6 @@
   </div>
 </div>
 
-<span>{{productItem.img[0]|json}}</span>
 
 <script>
 
@@ -137,3 +138,4 @@
 </script>
 <router-outlet></router-outlet>
 
+<div>{{productItem1|json}}</div>

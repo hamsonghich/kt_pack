@@ -44,6 +44,12 @@ import { BannerSalesComponent } from './banner-sales/banner-sales.component';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { FixContentComponent } from './fix-content/fix-content.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { TestDataJsonComponent } from './test-data-json/test-data-json.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { CartComponent } from './cart/cart.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -70,31 +76,37 @@ import { FixContentComponent } from './fix-content/fix-content.component';
     TrangChuComponent,
     SearchResultComponent,
     FixContentComponent,
+    TestDataJsonComponent,
+    CartComponent,
+
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatAutocompleteModule,
-        MatOptionModule,
-        MatFormFieldModule,
-        ReactiveFormsModule,
-        MatInputModule,
-        MatExpansionModule,
-        MatListModule,
-        CdkAccordionModule,
-        A11yModule,
-        FormsModule,
-        NgxPaginationModule,
-        MatSelectModule,
-        MatButtonToggleModule,
-        NgbModule,
-        BrowserAnimationsModule,
-        CarouselModule,
-        RouterModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatAutocompleteModule,
+    MatOptionModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatListModule,
+    CdkAccordionModule,
+    A11yModule,
+    FormsModule,
+    NgxPaginationModule,
+    MatSelectModule,
+    MatButtonToggleModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    CarouselModule,
+    RouterModule,
+    HttpClientModule,
+    MatBadgeModule,
+    MatCheckboxModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

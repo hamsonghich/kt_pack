@@ -14,6 +14,9 @@ import {TrangChuComponent} from './trang-chu/trang-chu.component';
 import {TintucComponent} from './tintuc/tintuc.component';
 import {SearchResultComponent} from './search-result/search-result.component';
 import {HeaderComponent} from './header/header.component';
+import {DataJsonServerService} from './services/data-json-server.service';
+import {TestDataJsonComponent} from './test-data-json/test-data-json.component';
+import {CartComponent} from './cart/cart.component';
 
 const routes: Routes = [
   {path: 'trangchu', component: TrangChuComponent},
@@ -29,6 +32,8 @@ const routes: Routes = [
   {path: 'productType/:id', component: ProductTypeComponent},
   {path: 'header', component: HeaderComponent},
   {path: 'searchResult', component: SearchResultComponent},
+  {path: 'datajson', component: TestDataJsonComponent},
+  {path: 'cart', component: CartComponent},
   {path: '**', redirectTo: '/trangchu', pathMatch: 'full' },
   // {path: '**', component: NotFoundComponent},
 

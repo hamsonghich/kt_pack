@@ -1,13 +1,11 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as $ from 'jquery';
 import {Observable} from 'rxjs';
-import {filter, map, startWith} from 'rxjs/operators';
+import {map, startWith} from 'rxjs/operators';
 import {FormControl} from '@angular/forms';
 import {DataServicesService} from '../services/data-services.service';
-import {data} from 'jquery';
-import {ArrayType} from '@angular/compiler';
-import {element} from 'protractor';
 import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -15,6 +13,8 @@ import {Router} from '@angular/router';
 })
 
 export class HeaderComponent implements OnInit {
+  public counter = 0;
+  public dataCart: any[] = [];
   public dataSearchKeyword: any[] = [];
   public dataSearchMatch: any[] = [];
   public options1: any[] = [];
@@ -31,7 +31,19 @@ export class HeaderComponent implements OnInit {
     console.log(this.myControl.value);
   }
   ngOnInit(): void {
+    this.dataServicesService.dataAddCartItem$.subscribe(dem => {
+      this.dataCart.splice(0, this.dataCart.length);
+      dem.forEach((item1: any) => {
+        this.dataCart.push(item1);
+        this.counter = this.dataCart.length;
+        console.log('---------ii---------');
+        console.log(this.dataCart);
+        console.log('----------ii--------');
+      });
+    });
+
     $(document).ready(() => {
+      // tslint:disable-next-line:typedef
       $('.inputSearch').keyup(function(e) {
         if (e.which === 13) {
           $(this).blur();

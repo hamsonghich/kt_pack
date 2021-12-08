@@ -20,6 +20,7 @@
       .col-right__level1 {
         width: 100%;
         display: flex;
+        position: relative;
 
         .content-img {
           width: 400px;
@@ -84,38 +85,32 @@
             height: 200px;
             margin-top: 10px;
 
-            ::ng-deep .owl-nav.ng-star-inserted {
-              display: none;
-            }
-
-            ::ng-deep owl-carousel-o {
-              .owl-item {
-                padding: 5px;
-                width: 90px;
-                height: 95px;
+            ul{
+              padding-left: 0!important;
+              width: 100%;
+              padding-bottom: 20px;
+              list-style: none;
+              display: flex;justify-content: flex-start;
+              li{
+                width: 25%;height: 25%;
+                margin: 8px;   transition:all 0.35s ease-in;
+                border: 1px solid var(--primary-color);
                 border-radius: 5px;
-
-                img {
-                  padding: 5px;
-                  width: 100%;
-                  height: 100%;
-                  border-radius: 10px;
-                  border: 1px solid rgb(13, 92, 182);
-                  transform: scale(0.9); transition: all 0.35s ease-in;
-                  opacity: 0.75;
+                aspect-ratio: 10/10;
+                img{
+                  border-radius: 3px;
+                  margin: 5%;opacity: 0.8;
+                  width: 90%;
+                  height: 90%;
                 }
               }
-
-              .owl-item:hover {
-                img {
-                  border-radius: 5px;
-                  border: 2px solid var(--primary-color);
-                  transform: scale(1.1);
-                  transition: all 0.35s ease-in;
+              li:hover{
+                transition:all 0.35s ease-in;
+                transform: scale(1.1);
+                img{
                   opacity: 1;
                 }
               }
-
             }
           }
 
@@ -125,6 +120,7 @@
           width: calc(100% - 400px);
           background-color: white;
           padding-left: 15px;
+          margin-top: 15px;
 
           .box-caption {
             display: inline-block;
@@ -234,6 +230,27 @@
             margin-top: 10px;
             font-family: hevatica-light, sans-serif;
             font-size: 110%;
+            .addCart{
+                display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 10px 20px;
+              border-radius: 2px;
+              border:1px solid #ee4d2d;
+              background-color: #ff3945;
+              i{
+                margin: 0 4px;
+                color: white;
+              }
+              span{
+                color: white;
+                font-family: hevatica-regular, sans-serif;
+              }
+            }
+            .addCart:disabled{
+              opacity: 0.5;
+            }
+
           }
 
           .socials-share {
@@ -262,6 +279,58 @@
                 letter-spacing: 1px;
                 font-size: 90%;
               }
+            }
+          }
+        }
+        .toastAddCart{
+          position: absolute;
+          top:7px;right: 0;overflow: hidden;
+          border-radius: 5px;
+          width: 300px;
+          height: 50px;z-index: 10;
+          background-color: #c2f3d6;
+          opacity: 0;
+          ul{
+            border-radius: 3px;
+            list-style: none;overflow: hidden;
+            display: flex;justify-content: flex-start;
+            align-items: center;height: 100%;
+            margin-bottom: 0rem!important;
+            padding-left: 0rem!important;
+            li{
+              display: flex;justify-content: center;
+              align-items: center;
+            }
+            li:nth-child(1){
+              width: 5px;
+              height: 100%;
+              background-color: #47d985;
+            }
+            li:nth-child(2){
+             width: 270px;
+              height: 100%;
+              i{
+                color:#24ae5c;
+                font-size: 140%;
+                padding-right: 5px;
+              }
+              span{
+                font-family: hevatica-regular, sans-serif;
+                color: #48b76e;
+              }
+            }
+            li:nth-child(3){
+              height: 100%;
+              width: calc(300px - 270px - 5px);
+              background-color: #95eab8;
+              button{
+                background: none;
+                border:none;
+                i{
+                  color:#40bc77;
+                }
+              }
+
             }
           }
         }
@@ -340,5 +409,16 @@
       }
 
       }
+  }
+}
+@keyframes animationToast {
+  from{
+    top:7px;right:0;
+    opacity: 0;
+  }
+  to{
+    top: 7px;
+    right: 200px;
+    opacity: 1;
   }
 }
